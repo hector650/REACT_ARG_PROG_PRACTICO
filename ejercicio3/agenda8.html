@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Agenda 8</title>
+        <link rel="stylesheet" href="agenda.css"/>
+        
+        <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <main>
+            <div id="root"></div>
+
+            <script type="text/babel">
+
+                function Agenda() { 
+                    const [filtro, setFiltro] = React.useState('');
+                    const [contactos, setContactos] = React.useState([]);
+
+                    React.useEffect( () => {
+                        fetch('agenda.json')    // Carga los datos de una fuente externa
+                            .then(response => response.json())
+                            .then(setContactos);
+                    }, []);
+
+
+
+                    const filtrados = contactos.filter( (contacto) => incluir(contacto, filtro) )
+                    return (
+                        <>
+                            <h1>Agenda 8</h1>
+                            <ul>
+                                { filtrados.map( (contacto) =><Contacto {...contacto}/>)}
+                            </ul>
+                        </>
+                    );
+                }
+                
+                function Contacto({nombre, descripcion, precio,stock}) {
+                    return (
+                        <li>
+                            <div>{nombre} <b>{descripcion}</b></div>
+                            <p>T: {precio}</p>
+                            <p>T: {stock}</p>
+                        </li>
+                    );
+                }                                                    
+                // Funcion para filtrar contactos
+                function incluir({nombre, descripcion} , texto) {
+                    texto = texto.trim().toLocaleLowerCase();
+                    const nombreCompleto = ` ${nombre} ${descripcion}`.toLocaleLowerCase();
+                    return nombreCompleto.includes(texto)
+                }
+                // Instalar App
+                const root = document.getElementById('root');
+                ReactDOM.render(<Agenda/>, root);
+            </script>
+        </main>
+    </body>
+</html>

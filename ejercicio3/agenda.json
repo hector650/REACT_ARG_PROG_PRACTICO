@@ -1,0 +1,6 @@
+
+       [
+            { "nombre": "Nike", "descripcion": "Su tecnología AQUACLEVER lo impermeabiliza logran tener el pie seco y cálido por todo el recorrido.", "precio": "50000", "sdk": "10" },
+            { "nombre": "Adidas", "descripcion": "Combina las tecnologías ARMORED K para proteger las áreas mas comprometidas del pie con la estructura EXO Support que aporta estabilidad lateral y proporciona el mejor calce para tu seguridad al andar.", "precio": "45378", "sdk": "3" },
+            { "nombre": "Reebok", "descripcion": "La suela elevada compuesta por materiales de alta densidad proporciona la estructura ideal que brinda estabilidad y seguridad al andar.", "precio": "35466", "sdk": "2" },
+        ];

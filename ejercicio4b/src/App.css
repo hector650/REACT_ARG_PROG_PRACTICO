@@ -1,0 +1,59 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+body{
+  background: linear-gradient(125deg, rgba(26,16,191,1) 0%, rgba(14,14,128,1) 36%, rgba(15,185,215,0.7231267507002801) 100%);
+
+}
+
+.logo {
+  height: 4em;
+  padding: 0.5em;
+  will-change: filter;
+  transition: filter 100ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.tarjeta{
+  border: 2px solid black;
+  border-radius: 15px;
+  background: rgb(213, 219, 211);
+  margin: 20px ;
+
+}
+.tarjeta button{
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  background: rgb(132, 173, 234);
+  margin-top: 0;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

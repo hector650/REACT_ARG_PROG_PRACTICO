@@ -1,0 +1,5 @@
+{"todos": [
+    { "id": 1, "nombre": "Candidato 1", "apellido": "cualquiera" },
+    { "id": 2, "nombre": "Candidato 2", "apellido": "segundo" }
+
+  ]}
